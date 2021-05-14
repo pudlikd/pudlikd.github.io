@@ -1,0 +1,42 @@
+
+
+
+/**
+ * The Employee entity.
+ */
+entity Employee {
+	/**
+	* The firstname attribute.
+	*/
+	firstName String,
+	lastName String,
+	email String,
+	phoneNumber String,
+	hireDate Instant,
+	salary Long,
+	commissionPct Long
+}
+
+entity Job {
+	jobTitle String,
+	minSalary Long,
+	maxSalary Long
+}
+
+
+
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Employee to Job{employee},
+}
+
+relationship ManyToOne {
+	Employee{manager} to Employee
+}
+
+
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
